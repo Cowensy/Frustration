@@ -11,36 +11,37 @@ namespace Frustration
         public Player(string col)
         {
             colour = col;
-            
-        }
-
-        public Player()
-        {
             Tokens.Add(a);
             Tokens.Add(b);
             Tokens.Add(c);
             Tokens.Add(d);
+
+        }
+
+        public Player()
+        {
+            
         }
 
         private int tokensAtHome = 4;
-        private string colour;
+        private static string colour;
         private Token a = new Token(colour);
-        private Token b = new Token();
-        private Token c = new Token();
-        private Token d = new Token();
+        private Token b = new Token(colour);
+        private Token c = new Token(colour);
+        private Token d = new Token(colour);
 
         public List<Token> Tokens = new List<Token>();
         
 
-        public Token GetToken()
+        public Token GetTokenFromHome()
         {
             foreach (Token t in Tokens)
             {
-                if (t.getBoardPosition() == null )
+                if (t.getBoardPosition() == 0 )
                 {
-                    t.setBoardPosition(1);
+                    t.setBoardPosition();
                     return t;
-                    break;
+                    
                 }
                 return t;
 

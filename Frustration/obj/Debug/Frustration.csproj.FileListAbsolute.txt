@@ -1,0 +1,9 @@
+c:\users\cam_o\source\repos\Frustration\Frustration\bin\Debug\Frustration.exe.config
+c:\users\cam_o\source\repos\Frustration\Frustration\bin\Debug\Frustration.exe
+c:\users\cam_o\source\repos\Frustration\Frustration\bin\Debug\Frustration.pdb
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.csprojResolveAssemblyReference.cache
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.Properties.Resources.resources
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.csproj.GenerateResource.Cache
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.csproj.CoreCompileInputs.cache
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.exe
+c:\users\cam_o\source\repos\Frustration\Frustration\obj\Debug\Frustration.pdb

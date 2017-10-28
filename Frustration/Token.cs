@@ -8,12 +8,43 @@ namespace Frustration
 {
     class Token 
     {
+        enum StartSpace
+        {
+            blue = 1,
+            red = 8, 
+            green = 15,
+            yellow = 22,
+        };
+
+        public Token(string col)
+        {
+            colour = col;
+        }
+        public Token()
+        {
+
+        }
         private string colour;
        private int boardPosition;
 
-        public void setBoardPosition(int position)
+        public void setBoardPosition()
         {
-            boardPosition = position;
+            if (colour == "blue")
+            {
+                boardPosition = (int)StartSpace.blue;
+            }
+            else if (colour == "red")
+            {
+                boardPosition = (int)StartSpace.red;
+            }
+            else if (colour == "green")
+            {
+                boardPosition = (int)StartSpace.green;
+            }
+           else if (colour == "yellow")
+            {
+                boardPosition = (int)StartSpace.yellow;
+            }
         }
 
         public int getBoardPosition()
@@ -21,9 +52,6 @@ namespace Frustration
             return boardPosition;
         }
 
-        public Token(string col)
-        {
-
-        }
+        
     }
 }

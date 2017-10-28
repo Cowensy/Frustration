@@ -8,17 +8,9 @@ namespace Frustration
 {
     static class Game
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-
+       
         static void Main(string[] args)
         {
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Form1());
 
             bool gameOver = false;
             BoardSpace[] board = new BoardSpace[28];
@@ -53,7 +45,7 @@ namespace Frustration
                     int dice = int.Parse(Console.ReadLine());
                     if (dice == 6 & humanPlayer.GetTokenNo() == 4)
                     {
-                        board[0].setPlayer(humanPlayer.GetToken()); 
+                        board[0].setPlayer(humanPlayer.GetTokenFromHome()); 
                     }
                     
                     Console.Clear();
@@ -64,8 +56,7 @@ namespace Frustration
                     }
 
 
-                    
-
+               
                 }
 
                 } while (gameOver == false);
