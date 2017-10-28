@@ -25,10 +25,10 @@ namespace Frustration
 
         private int tokensAtHome = 4;
         private static string colour;
-        private Token a = new Token(colour);
-        private Token b = new Token(colour);
-        private Token c = new Token(colour);
-        private Token d = new Token(colour);
+        private Token a = new Token("a", colour);
+        private Token b = new Token("b" ,colour);
+        private Token c = new Token("c", colour);
+        private Token d = new Token("d" ,colour);
 
         public List<Token> Tokens = new List<Token>();
         

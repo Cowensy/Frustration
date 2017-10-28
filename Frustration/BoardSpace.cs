@@ -22,31 +22,33 @@ namespace Frustration
         {
             if (startSpace == true)
             {
-                if (startSpaceColour == "blue")
-                {
-                    Console.BackgroundColor = ConsoleColor.Blue;
-                }
-                else if (startSpaceColour == "red")
-                {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                }
-                else if (startSpaceColour == "yellow")
-                {
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                }
-                else if (startSpaceColour == "green")
-                {
-                    Console.BackgroundColor = ConsoleColor.Green;
-                }
+                Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), startSpaceColour, true);
+               
                 if (isTaken == true)
                 {
-                    Console.Write("[ * ]");
+                   
+                    Console.Write("[");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), currentPlayer.GetColour(), true);
+                    
+                    Console.Write(currentPlayer.GetLetter());
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), startSpaceColour, true);
+                    Console.Write("]");
                     Console.ResetColor();
                     Console.Write(" ");
                 }
                 else
                 {
-                    Console.Write("[  ]");
+                    
+                    Console.Write("[");
+
+                    Console.ResetColor();
+                    Console.Write("  ");
+                    Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), startSpaceColour, true);
+                    Console.Write("]");
                     Console.ResetColor();
                     Console.Write(" ");
                 }
@@ -55,8 +57,10 @@ namespace Frustration
             {
                 if (isTaken == true)
                 {
-                    Console.Write("[ * ]");
+                    Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), currentPlayer.GetColour(), true);
+                    Console.Write("[ " + currentPlayer.GetLetter() + " ]");
                     Console.Write(" ");
+                    Console.ResetColor();
                 }
                 else
                 {
@@ -66,8 +70,8 @@ namespace Frustration
             }                                           
         }
 
-        
         Token currentPlayer;
+        
 
        
 

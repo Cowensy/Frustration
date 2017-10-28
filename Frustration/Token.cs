@@ -16,15 +16,17 @@ namespace Frustration
             yellow = 22,
         };
 
-        public Token(string col)
+        public Token(string let, string col)
         {
             colour = col;
+            letter = let;
         }
         public Token()
         {
 
         }
         private string colour;
+        private string letter;
        private int boardPosition;
 
         public void setBoardPosition()
@@ -52,6 +54,16 @@ namespace Frustration
             return boardPosition;
         }
 
-        
+        public string GetLetter()
+        {
+            return letter;
+        }
+
+        public string GetColour()
+        {
+            return colour;
+        }
+
+
     }
 }
