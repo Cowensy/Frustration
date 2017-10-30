@@ -11,6 +11,11 @@ namespace Frustration
         public Player(string col)
         {
             colour = col;
+            Token a = new Token("a", colour);
+         Token b = new Token("b", colour);
+         Token c = new Token("c", colour);
+         Token d = new Token("d", colour);
+        
             Tokens.Add(a);
             Tokens.Add(b);
             Tokens.Add(c);
@@ -24,11 +29,8 @@ namespace Frustration
         }
 
         private int tokensAtHome = 4;
-        private static string colour;
-        private Token a = new Token("a", colour);
-        private Token b = new Token("b" ,colour);
-        private Token c = new Token("c", colour);
-        private Token d = new Token("d" ,colour);
+        private string colour;
+        
 
         public List<Token> Tokens = new List<Token>();
         
@@ -37,16 +39,16 @@ namespace Frustration
         {
             foreach (Token t in Tokens)
             {
-                if (t.getBoardPosition() == 0 )
+                if (t.GetBoardPosition() == 0 )
                 {
-                    t.setBoardPosition();
+                    t.setStartPosition();
                     return t;
                     
                 }
-                return t;
+                return null;
 
             }
-            return a;
+            return null;
         }
         public int GetTokenNo()
         {
@@ -58,6 +60,9 @@ namespace Frustration
             
         }
 
-
+        public string GetColour()
+        {
+            return colour;
+        }
     }
 }

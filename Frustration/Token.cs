@@ -28,12 +28,14 @@ namespace Frustration
         private string colour;
         private string letter;
        private int boardPosition;
+        private int placesMoved;
 
-        public void setBoardPosition()
+        public void setStartPosition()
         {
             if (colour == "blue")
             {
                 boardPosition = (int)StartSpace.blue;
+                
             }
             else if (colour == "red")
             {
@@ -49,9 +51,19 @@ namespace Frustration
             }
         }
 
-        public int getBoardPosition()
+        public int GetBoardPosition()
         {
             return boardPosition;
+        }
+        
+        public void moveToken(int num)
+        {
+            boardPosition = +num;
+            placesMoved = +num;
+            if (boardPosition < 28 )
+            {
+                boardPosition = 1;
+            }
         }
 
         public string GetLetter()

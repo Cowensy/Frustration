@@ -22,8 +22,8 @@ namespace Frustration
         {
             if (startSpace == true)
             {
-                Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), startSpaceColour, true);
-               
+                Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), startSpaceColour, true); // https://stackoverflow.com/questions/30799107/change-the-console-foregroundcolor-from-a-string
+
                 if (isTaken == true)
                 {
                    
@@ -75,15 +75,12 @@ namespace Frustration
 
        
 
-        public void SetAsTaken(string colour)
-        {
-            isTaken = true;
-            playerColour = colour;
-        }
+       
 
         public void SetAsEmpty()
         {
             isTaken = false;
+            currentPlayer = null;
         }
 
         public bool IsSpaceTaken()
@@ -101,6 +98,12 @@ namespace Frustration
         {
             currentPlayer = playerOnSpace;
             isTaken = true;
+            playerColour = playerOnSpace.GetColour();
+        }
+
+        public string getColour()
+        {
+            return playerColour;
         }
     }
 }
