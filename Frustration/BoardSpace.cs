@@ -74,12 +74,16 @@ namespace Frustration
         
 
        
-
+        public void LandOnOppenent()
+        {
+            currentPlayer.SendHome();
+        }
        
 
         public void SetAsEmpty()
         {
             isTaken = false;
+            
             currentPlayer = null;
         }
 

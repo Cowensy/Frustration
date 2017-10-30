@@ -10,10 +10,10 @@ namespace Frustration
     {
         enum StartSpace
         {
-            blue = 1,
-            red = 8, 
-            green = 15,
-            yellow = 22,
+            blue = 0,
+            red = 7, 
+            green = 14,
+            yellow = 21,
         };
 
         public Token(string let, string col)
@@ -27,7 +27,7 @@ namespace Frustration
         }
         private string colour;
         private string letter;
-       private int boardPosition;
+        private int boardPosition = -1;
         private int placesMoved;
 
         public void setStartPosition()
@@ -55,16 +55,27 @@ namespace Frustration
         {
             return boardPosition;
         }
-        
+        public int TotalPlacesMoved()
+        {
+            return placesMoved;
+        }
+
         public void moveToken(int num)
         {
-            boardPosition = +num;
-            placesMoved = +num;
-            if (boardPosition < 28 )
+            boardPosition +=num;
+            placesMoved += num;
+            if (boardPosition > 27 )
             {
-                boardPosition = 1;
+                boardPosition -= 28;
             }
         }
+
+        public void SendHome()
+        {
+            boardPosition = -1;
+            placesMoved = 0;
+        }
+
 
         public string GetLetter()
         {
